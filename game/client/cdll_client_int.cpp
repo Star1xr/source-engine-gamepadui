@@ -146,6 +146,8 @@
 #ifdef WORKSHOP_IMPORT_ENABLED
 #include "fbxsystem/fbxsystem.h"
 #endif
+#include "touch.h"
+
 
 extern vgui::IInputInternal *g_InputInternal;
 
@@ -1511,6 +1513,24 @@ void CHLClient::IN_SetSampleTime( float frametime )
 	g_pSixenseInput->ResetFrameTime( frametime );
 #endif
 }
+void CHLClient::IN_TouchEvent( int type, int fingerId, int x, int y )
+{
+	if( enginevgui->IsGameUIVisible() )
+		return;
+
+	touch_event_t ev;
+
+	ev.type = type;
+	ev.fingerid = fingerId;
+	memcpy( &ev.x, &x, sizeof(ev.x) );
+	memcpy( &ev.y, &y, sizeof(ev.y) );
+
+	if( type == IE_FingerMotion )
+		inputsystem->GetTouchAccumulators( fingerId, ev.dx, ev.dy );
+
+	gTouch.ProcessEvent( &ev );
+}
+
 //-----------------------------------------------------------------------------
 // Purpose: Fills in usercmd_s structure based on current view angles and key/controller inputs
 // Input  : frametime - timestamp for last frame
