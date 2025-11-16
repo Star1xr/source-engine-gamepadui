@@ -708,7 +708,7 @@ static ConVar *g_pcv_ThreadMode = NULL;
 
 #if defined( GAMEPADUI )
 
-const bool IsSteamDeck()
+bool IsSteamDeck()
 
 {
 
