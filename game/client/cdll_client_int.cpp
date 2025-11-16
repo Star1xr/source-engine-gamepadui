@@ -353,25 +353,6 @@ class IClientPurchaseInterfaceV2 *g_pClientPurchaseInterface = (class IClientPur
 
 static ConVar *g_pcv_ThreadMode = NULL;
 
-// GAMEPADUI TODO - put this somewhere better. (Madi)
-#if defined( GAMEPADUI )
-bool IsSteamDeck()
-{
-	if ( CommandLine()->FindParm( "-gamepadui" ) )
-		return true;
-
-	if ( CommandLine()->FindParm( "-nogamepadui" ) )
-		return false;
-
-	const char *pszSteamDeckEnv = getenv( "SteamDeck" );
-	if ( pszSteamDeckEnv && *pszSteamDeckEnv )
-		return atoi( pszSteamDeckEnv ) != 0;
-
-	return false;
-}
-#endif
-
-
 //-----------------------------------------------------------------------------
 // Purpose: interface for gameui to modify voice bans
 //-----------------------------------------------------------------------------
