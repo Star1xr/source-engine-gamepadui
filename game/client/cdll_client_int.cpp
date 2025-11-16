@@ -355,7 +355,7 @@ static ConVar *g_pcv_ThreadMode = NULL;
 
 // GAMEPADUI TODO - put this somewhere better. (Madi)
 #if defined( GAMEPADUI )
-const bool IsSteamDeck()
+bool IsSteamDeck()
 {
 	if ( CommandLine()->FindParm( "-gamepadui" ) )
 		return true;
@@ -756,6 +756,9 @@ public:
 	void PrecacheMaterial( const char *pMaterialName );
 
 	virtual bool IsConnectedUserInfoChangeAllowed( IConVar *pCvar );
+
+	// Added for GamepadUI touch support
+	virtual void IN_TouchEvent( int type, int fingerId, int x, int y );
 
 private:
 	void UncacheAllMaterials( );
