@@ -1290,6 +1290,11 @@ $Project "vgui_dll"
 	"vgui2\src\vgui_dll.vpc" [$WINDOWS||$X360||$POSIX]
 }
 
+$Project "gamepadui"
+{
+	"game\gamepadui\gamepadui_hl2.vpc" [$HL2]
+}
+
 $Project "vgui_surfacelib"
 {
 	"vgui2\vgui_surfacelib\vgui_surfacelib.vpc" [$WINDOWS||$X360||$POSIX]
