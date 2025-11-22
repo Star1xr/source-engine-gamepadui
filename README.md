@@ -1,6 +1,8 @@
 # About this fork
 This fork makes gamepadui possible on nillerusr's source engine code.
-And it has artifacts to upload build output files. So you can download output files after building on actions when it gives you artifact url. This makes it possible to build with 0 effort and without a vm/pc/server. This idea came into my mind because my ubuntu aint compiling the game.
+And it has artifacts to upload build output files(Has an issue now due to llvm. More info below). So you can download output files after building on actions when it gives you artifact url. This makes it possible to build with 0 effort and without a vm/pc/server. This idea came into my mind because my ubuntu aint compiling the game.
+
+(Figured out why my ubuntu has the problem. The problem is on the LLVM. Same issue happens on actions too. So we gotta wait to get the issue fixed.)
 
 Credits:
 - Valve
