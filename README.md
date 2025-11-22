@@ -3,9 +3,13 @@ This fork makes gamepadui possible on nillerusr's source engine code.
 And it has artifacts to upload build output files. So you can download output files after building on actions when it gives you artifact url. This makes it possible to build with 0 effort and without a vm/pc/server. This idea came into my mind because my ubuntu aint compiling the game.
 
 Credits:
+
 Valve
+
 nillerusr
+
 misyltoad
+
 other contributers of source engine and gamepadui source code.
 
 # Source Engine
