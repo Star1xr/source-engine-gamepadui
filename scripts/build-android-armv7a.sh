@@ -9,3 +9,4 @@ export NDK_HOME=$PWD/android-ndk-r10e/
 ./waf build
 cd build
 zip -r ../build.zip .
+
