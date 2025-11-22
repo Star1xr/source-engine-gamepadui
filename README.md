@@ -1,3 +1,8 @@
+# About this fork
+This fork makes gamepadui possible on nillerusr's source engine code
+And it has artifacts to upload build output files. So you can download output files after building on actions when it gives you artifact url. This makes it possible to build with 0 effort and without a vm/pc/server. This idea came into my mind because my ubuntu aint compiling the game.
+
+
 # Source Engine
 [![GitHub Actions Status](https://github.com/nillerusr/source-engine/actions/workflows/build.yml/badge.svg)](https://github.com/nillerusr/source-engine/actions/workflows/build.yml) [![GitHub Actions Status](https://github.com/nillerusr/source-engine/actions/workflows/tests.yml/badge.svg)](https://github.com/nillerusr/source-engine/actions/workflows/tests.yml)
  Discord: [![Discord Server](https://img.shields.io/discord/672055862608658432.svg)](https://discord.gg/hZRB7WMgGw)
