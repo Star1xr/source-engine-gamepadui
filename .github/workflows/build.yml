@@ -29,6 +29,14 @@ jobs:
     - name: Build android-armv7a
       run: |
         scripts/build-android-armv7a.sh
+   cd build
+
+    - uses: actions/upload-artifact@v3
+      name: Upload artifact      
+      with:
+        name: build-outputs
+        path: build.zip
+
 
   build-windows-i386:
     runs-on: windows-2019
