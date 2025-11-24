@@ -12,8 +12,7 @@ jobs:
       run: |
         scripts/build-android-armv7a.sh
 
-    - uses: actions/upload-artifact@v4
-      name: Upload artifact      
+    - uses: actions/upload-artifact@v4      
       with:
         name: build-outputs
         path: build.zip
