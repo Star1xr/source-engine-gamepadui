@@ -39,7 +39,7 @@ NDK_GNU_TOOLCHAIN_48="$NDK_HOME/toolchains/arm-linux-androideabi-4.8/prebuilt/li
 export PATH="$NDK_LLVM_TOOLCHAIN_BIN:$NDK_GNU_TOOLCHAIN_49:$NDK_GNU_TOOLCHAIN_48:$PATH"
 
 
-./waf configure -T release --android=armeabi-v7a,hard,host,21 --togles --disable-warns &&
+./waf configure -T release --android=armeabi-v7a-hard,host,21 --togles --disable-warns &&
 ./waf build
 
 cd build
