@@ -15,7 +15,7 @@ set -e
 
 git submodule init && git submodule update
 
-NDK_VERSION="r10c"
+NDK_VERSION="r10e"
 NDK_UNZIPPED_NAME="android-ndk-${NDK_VERSION}"
 NDK_COMPAT_NAME="android-ndk-r10e"
 
