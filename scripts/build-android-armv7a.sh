@@ -19,8 +19,8 @@ NDK_VERSION="r10e"
 NDK_UNZIPPED_NAME="android-ndk-${NDK_VERSION}"
 NDK_COMPAT_NAME="android-ndk-r10e"
 
-wget https://dl.google.com/android/repository/android-ndk-${NDK_VERSION}-linux-x86_64.zip -O android-ndk-${NDK_VERSION}-linux-x86_64.zip
-unzip -q android-ndk-${NDK_VERSION}-linux-x86_64.zip
+wget https://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip -o /dev/null
+unzip android-ndk-r10e-linux-x86_64.zip
 
 # Fix 'llvm strip is not executable' error by ensuring permissions are set.
 chmod -R +x "$PWD/${NDK_UNZIPPED_NAME}/toolchains/llvm/prebuilt/linux-x86_64/bin"
