@@ -30,13 +30,23 @@ export PATH=$NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
 # If Waf is looking for 'llvm-strip', it needs this path.
 NDK_LLVM_TOOLCHAIN_BIN="$NDK_HOME/toolchains/llvm-3.6/prebuilt/linux-x86_64/bin"
 
-# 2. GNU Path (Legacy GCC 4.9 and 4.8)
-# Used for prefixed strip/objcopy binaries (e.g., 'arm-linux-androideabi-strip').
-NDK_GNU_TOOLCHAIN_49="$NDK_HOME/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin"
-NDK_GNU_TOOLCHAIN_48="$NDK_HOME/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86_64/bin"
+
+# --- FIX 2 & 3: Define, Export Path, and Force Compiler Variables ---
+# The NDK r10e's most stable toolchain for armeabi-v7a is GCC 4.9.
+NDK_GNU_TOOLCHAIN_BIN="$NDK_HOME/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin"
+
+# 2. Add the toolchain bin directory to PATH so utilities like 'strip' are found.
+# down there
+
+# 3. Explicitly set CC and CXX to the full path of the GNU compilers.
+# This forces Waf to use the specific compiler for its initial check.
+export CC="$NDK_GNU_TOOLCHAIN_BIN/arm-linux-androideabi-gcc"
+export CXX="$NDK_GNU_TOOLCHAIN_BIN/arm-linux-androideabi-g++"
+
+
 
 # Export the PATH, prioritizing the LLVM path first to resolve the 'llvm-strip' issue.
-export PATH="$NDK_LLVM_TOOLCHAIN_BIN:$NDK_GNU_TOOLCHAIN_49:$NDK_GNU_TOOLCHAIN_48:$PATH"
+export PATH="$NDK_LLVM_TOOLCHAIN_BIN:$NDK_GNU_TOOLCHAIN_BIN:$PATH"
 
 
 ./waf configure -T release --android=armeabi-v7a-hard,host,21 --togles --disable-warns &&
