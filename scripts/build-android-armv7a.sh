@@ -11,8 +11,6 @@
 # cd build
 # zip -r ../build.zip .
 
-set -e
-
 git submodule init && git submodule update
 
 NDK_VERSION="r10e"
@@ -22,7 +20,7 @@ NDK_COMPAT_NAME="android-ndk-r10e"
 wget https://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip -o /dev/null
 unzip android-ndk-r10e-linux-x86_64.zip
 
-apt install clang
+sudo apt install clang
 
 export ANDROID_NDK_HOME=$PWD/android-ndk-r10e
 export NDK_HOME=$PWD/android-ndk-r10e
